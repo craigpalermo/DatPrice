@@ -14,7 +14,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
 
 TEMPLATE_DIRS = (
-    PROJECT_PATH + '/templates/'
+    PROJECT_PATH + '/templates/',
+)
+
+STATICFILES_DIRS = (
+    PROJECT_PATH + '/static/',
 )
 
 # Quick-start development settings - unsuitable for production
