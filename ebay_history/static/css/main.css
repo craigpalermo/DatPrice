@@ -1,0 +1,12 @@
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+#search-div {
+    text-align: center;
+}
+
+#page-header {
+    text-align: center;
+}
