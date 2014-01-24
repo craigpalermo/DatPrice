@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<form name='search' action='/' method='post'>
+    {% csrf_token %}
+    <label for='keywords'>Keywords</label>
+    <input type='text' id='keywords' name='keywords'>
+
+    <label for='categoryId'>Category ID</label>
+    <input type='categoryId' id='categoryId' name='categoryId'>
+
+    <input type='submit'>
+</form>
+{% endblock %}
