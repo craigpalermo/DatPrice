@@ -3,6 +3,10 @@
     margin: 0 auto;
 }
 
+.pull-center {
+    text-align:center;
+}
+
 #search-div {
     text-align: center;
 }
@@ -21,6 +25,7 @@
 	padding-top: 10px;
 	padding-bottom: 10px;
     width: 600px;
+    text-align: center;
 }
 #keywords[type=text] {
     cursor:none;
