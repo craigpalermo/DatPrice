@@ -10,7 +10,7 @@
             <input type='text' id='keywords' name='keywords'>
 
             <label for='categoryId'>Category ID</label>
-            <select name='categoryId'>
+            <select name='categoryId' id='first-choice'>
                 <option value='20081'>Antiques</option>
                 <option value='550'>Art</option>
                 <option value='2984'>Baby</option>
@@ -47,6 +47,11 @@
                 <option value='99'>Everything Else</option>
             </select>
 
+	    <select id = "second-choice">
+	    </select>
+	<script>("#first-choice").change(function() {
+   $("#second-choice").load("textdata/" + $(this).val() + ".txt");
+});</script>	
             <input type='submit'>
         </form>
     </div>
