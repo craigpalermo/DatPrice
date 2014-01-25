@@ -72,4 +72,14 @@ $(document).ready(function () {
     }
     fadeInOut();
     */
+
+    /* Submit buttons for search form */
+    $("#similar-button").click(function() {
+        $("#search-form").attr('action', '/similar/');
+        $("#search-form").submit();
+    });
+    $("#appraise-button").click(function() {
+        $("#search-form").attr('action', '/');
+        $("#search-form").submit();
+    });
 });

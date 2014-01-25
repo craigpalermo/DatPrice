@@ -30,9 +30,11 @@
 #keywords[type=text] {
     cursor:none;
 }
-/*#keywords[placeholder]{
-	text-align: center;
-}*/
+
+#average-price, #average-price h3 {
+    margin-top:0;
+    text-align:center;
+}
 
 #categoryMenus {
 	background-color:  #004699;

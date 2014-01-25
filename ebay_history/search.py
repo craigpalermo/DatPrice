@@ -13,3 +13,13 @@ def get_search_results_json(keywords, categoryId):
                                        'sortOrder': 'EndTimeSoonest'})
     json_string = json.dumps(api.response_dict().get('searchResult').get('item'))
     return json_string
+
+def get_similar_listings(keywords, categoryId):
+    api = finding(appid=APPID)
+    api.execute('findItemsAdvanced', {'keywords': keywords, 
+                         'categoryId': categoryId, 
+                         'ListingType': 'FixedPrice',
+                         'soldItemsOnly': 'false', 
+                         'sortOrder': 'EndTimeSoonest'})
+    json_string = json.dumps(api.response_dict().get('searchResult').get('item'))
+    return json_string

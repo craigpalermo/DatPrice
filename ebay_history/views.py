@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.views.generic.base import View
 from django.shortcuts import render
 
-from search import get_search_results_json
+from search import get_search_results_json, get_similar_listings
 from datetime import datetime
 from time import mktime
 from operator import itemgetter
@@ -49,10 +49,35 @@ class HomeView(View):
             average = sum / len(items_by_hour[hour])
             averages[hour] = average
         sorted_averages = sorted(averages.iteritems())
-        print sorted_averages
+
+        # calculate average price
+        sum = 0
+        for item in sorted_averages:
+            sum += item[1]
+        average_price = sum / len(sorted_averages)
+
         data = {
             "averages": sorted_averages,
+            "average_price": average_price,
             "show_graph": True
         }
         return render(request, self.template_name, data)
 
+
+class SimilarView(View):
+    template_name = 'similar-listings.html'
+
+    def post(self, request):
+        keywords = request.POST.get('keywords')
+        categoryId = request.POST.get('categoryId')
+        json_string = get_similar_listings(keywords, categoryId)
+        results = json.loads(json_string)
+        
+        values = []
+        for item in results:
+            values.append(item['title']['value'])
+        print values 
+        data = {
+            "items": values,
+        }
+        return render(request, self.template_name, data)
