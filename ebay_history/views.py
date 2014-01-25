@@ -12,7 +12,8 @@ class HomeView(View):
     template_name = 'home.html'
 
     def get(self, request):
-        return render(request, self.template_name, None) 
+        data = {'show_graph': False}
+        return render(request, self.template_name, data) 
 
     def post(self, request):
         keywords = request.POST.get('keywords')
@@ -49,6 +50,7 @@ class HomeView(View):
         
         data = {
             "averages": averages,
+            "show_graph": True
         }
         return render(request, self.template_name, data)
 
