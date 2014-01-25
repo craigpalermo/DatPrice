@@ -9,7 +9,9 @@ def get_search_results_json(keywords, categoryId):
     api.execute('findCompletedItems', {'keywords': keywords, \
                                        'categoryId': categoryId, \
                                        'Condition': '3000', \
-                                       'soldItemsOnly': 'true',
+                                       'soldItemsOnly': 'true', \
                                        'sortOrder': 'EndTimeSoonest'})
+    
     json_out = api.response_dict().get('searchResult').get('item')
+    print json_out
     return json_out

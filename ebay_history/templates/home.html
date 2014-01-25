@@ -23,7 +23,7 @@
             </div>
 
             <div id="submitButton" class="row">
-                <input class='btn btn-primary' type='submit' value='Appraise'>
+                <input class='btn btn-primary btn-lg' type='submit' value='Appraise'>
             </div>
         </form>
     </div>
@@ -41,6 +41,12 @@
             </div>
         </div>
         {% if show_graph %}
+        <div class="row">
+            <div class="col-lg-8 col-centered" id="average-price">
+                <h3>The average price for similar items is <strong>${{ average_price|floatformat:2 }}</strong>.</h3>
+            </div>
+        </div>
+        
         <div class="row">
             <div class="col-lg-8 col-centered">
                 <div id="chartContainer">

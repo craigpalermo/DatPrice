@@ -49,9 +49,16 @@ class HomeView(View):
             average = sum / len(items_by_hour[hour])
             averages[hour] = average
         sorted_averages = sorted(averages.iteritems())
-        print sorted_averages
+
+        # calculate average price
+        sum = 0
+        for item in sorted_averages:
+            sum += item[1]
+        average_price = sum / len(sorted_averages)
+
         data = {
             "averages": sorted_averages,
+            "average_price": average_price,
             "show_graph": True
         }
         return render(request, self.template_name, data)
