@@ -5,6 +5,7 @@ from django.shortcuts import render
 from search import get_search_results_json
 from datetime import datetime
 from time import mktime
+from operator import itemgetter
 
 import json, time
 
@@ -47,9 +48,10 @@ class HomeView(View):
                 sum += item['value']
             average = sum / len(items_by_hour[hour])
             averages[hour] = average
-        
+        sorted_averages = sorted(averages.iteritems())
+        print sorted_averages
         data = {
-            "averages": averages,
+            "averages": sorted_averages,
             "show_graph": True
         }
         return render(request, self.template_name, data)
