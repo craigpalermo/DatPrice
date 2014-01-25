@@ -7,23 +7,31 @@ APPID = "CraigPal-4fe7-42b8-b29a-be707becdb0b"
 
 def main():
     query = raw_input("Search Term: ")
-    category = int(raw_input("CategoryID"))
+    category = int(raw_input("CategoryID: "))
 
     determine_below_mqt_val(query, category)
 
 def det_mv(item):
     request_url = "http://us.api.invisiblehand.co.uk/v1/products?app_id=2226a647&app_key=de0d3c4c34156a0abaaab69b61e9643a&query=" 
-
     name = item["title"]["value"]
     name = name [:len(name)/2]
 
     cond = item["condition"]["conditionDisplayName"]["value"]
     
-    name = cond + name
+    name = cond +" "+ name
+    
+    name = name.replace("+", " ")
+    name = name.replace("*", " ")
+    name = name.replace("&", " ")
+    name = name.replace("(", " ")
+    name = name.replace(")", " ")
+
 
     name = name.replace(" ", "%20")
 
     request_url += name
+    
+    print request_url
     json_in = json.loads(urllib2.urlopen(request_url).read())
 
     items = json_in["results"]
@@ -37,7 +45,7 @@ def det_mv(item):
     for curr_item in items:
         avg += int(curr_item["best_page"]["pnp"])
 
-    avg /= total_items
+    avg = avg/total_items
     
     return avg
     
