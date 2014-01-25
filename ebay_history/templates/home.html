@@ -4,7 +4,7 @@
 {% block content %}
 <div class="row">
     <div id="search-div" class="col-lg-12 col-centered">
-        <form name='search' action='/' method='post'>
+        <form id='search-form' name='search' method='post'>
             {% csrf_token %}
             <div class="row">
                 <label for='keywords'></label>
@@ -23,7 +23,8 @@
             </div>
 
             <div id="submitButton" class="row">
-                <input class='btn btn-primary btn-lg' type='submit' value='Appraise'>
+                <input class='btn btn-primary btn-lg' type='button' value='Appraise' id="appraise-button">
+                <input class='btn btn-primary btn-lg' type='button' value='Find Similar Items' id="similar-button">
             </div>
         </form>
     </div>

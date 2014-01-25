@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.views.generic.base import View
 from django.shortcuts import render
 
-from search import get_search_results_json
+from search import get_search_results_json, get_similar_listings
 from datetime import datetime
 from time import mktime
 from operator import itemgetter
@@ -63,3 +63,21 @@ class HomeView(View):
         }
         return render(request, self.template_name, data)
 
+
+class SimilarView(View):
+    template_name = 'similar-listings.html'
+
+    def post(self, request):
+        keywords = request.POST.get('keywords')
+        categoryId = request.POST.get('categoryId')
+        json_string = get_similar_listings(keywords, categoryId)
+        results = json.loads(json_string)
+        
+        values = []
+        for item in results:
+            values.append(item['title']['value'])
+        print values 
+        data = {
+            "items": values,
+        }
+        return render(request, self.template_name, data)
