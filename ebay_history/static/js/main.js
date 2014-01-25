@@ -52,4 +52,6 @@ $(document).ready(function () {
      
         chart.render();
     }
+
+    $("#keywords").focus()
 });
