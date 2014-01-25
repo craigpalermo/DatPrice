@@ -3,10 +3,45 @@
     margin: 0 auto;
 }
 
+.pull-center {
+    text-align:center;
+}
+
 #search-div {
     text-align: center;
 }
 
 #page-header {
     text-align: center;
+}
+
+#keywords {
+	outline: 0 !important;
+	border: none;
+	color: #004699;
+	font-size: 40px;
+	background-color: transparent;
+	font-family: 'Lato', sans-serif;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    width: 600px;
+    text-align: center;
+}
+#keywords[type=text] {
+    cursor:none;
+}
+/*#keywords[placeholder]{
+	text-align: center;
+}*/
+
+#categoryMenus {
+	background-color:  #004699;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+}
+
+#submitButton{
+	padding-top: 10px;
+	padding-bottom: 10px;
 }

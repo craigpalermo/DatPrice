@@ -6,54 +6,49 @@
     <div id="search-div" class="col-lg-12 col-centered">
         <form name='search' action='/' method='post'>
             {% csrf_token %}
-            <label for='keywords'>Keywords</label>
-            <input type='text' id='keywords' name='keywords'>
+            <div class="row">
+                <label for='keywords'></label>
+                <input type='text' id='keywords' name='keywords' placeholder='What would you like to appraise?'>
+            </div>
 
-            <label for='categoryId'>Category ID</label>
-            <select name='categoryId' id='first-choice'>
-                <option value='20081'>Antiques</option>
-                <option value='550'>Art</option>
-                <option value='2984'>Baby</option>
-                <option value='267'>Books</option>
-                <option value='12576'>Business & Industrial</option>
-                <option value='625'>Cameras & Photo</option>
-                <option value='15032'>Cell Phones & Accessories</option>
-                <option value='11450'>Clothing, Shoes & Accessories</option>
-                <option value='11116'>Coins & Paper Money</option>
-                <option value='1'>Collectibles</option>
-                <option value='58058'>Computers/Tablets & Networking</option>
-                <option value='293'>Consumer Electronics</option>
-                <option value='14339'>Crafts</option>
-                <option value='237'>Dolls & Bears</option>
-                <option value='11232'>DVDs & Movies</option>
-                <option value='45100'>Entertainment Memorabilia</option>
-                <option value='172008'>Gift Cards & Coupons</option>
-                <option value='26395'>Health & Beauty</option>
-                <option value='11700'>Home & Garden</option>
-                <option value='281'>Jewelry & Watches</option>
-                <option value='11233'>Music</option>
-                <option value='619'>Musical Instruments & Gear</option>
-                <option value='1281'>Pet Supplies</option>
-                <option value='870'>Pottery & Glass</option>
-                <option value='10542'>Real Estate</option>
-                <option value='316'>Specialty Services</option>
-                <option value='888'>Sporting Goods</option>
-                <option value='64482'>Sports Mem, Cards & Fan Shop</option>
-                <option value='260'>Stamps</option>
-                <option value='1305'>Tickets & Experiences</option>
-                <option value='220'>Toys & Hobbies</option>
-                <option value='3252'>Travel</option>
-                <option value='1249'>Video Games & Consoles</option>
-                <option value='99'>Everything Else</option>
-            </select>
+            <div id="categoryMenus" class="row">
+                <label for='categoryId'></label>
+                <select name='categoryId' id='first-choice'>
+                    {% include 'category-options.html' %}
+                </select>
 
-	    <select id = "second-choice">
-	    </select>
-	<script>("#first-choice").change(function() {
-   $("#second-choice").load("textdata/" + $(this).val() + ".txt");
-});</script>	
-            <input type='submit'>
+                <select id = "second-choice">
+                    <option>Select a Sub-Category</option>
+                </select>
+            </div>
+
+            <div id="submitButton" class="row">
+                <input class='btn btn-primary' type='submit' value='Appraise'>
+            </div>
         </form>
     </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+                <table id='average-table' style="display:none;">
+                    {% for item in averages %}
+                        <tr>
+                            <td>{{ item.0 }}</td>
+                            <td>{{ item.1 }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        {% if show_graph %}
+        <div class="row">
+            <div class="col-lg-8 col-centered">
+                <div id="chartContainer">
+                    <canvas style="height: 300px; width: 50%;">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+        {% endif %}
 </div>
 {% endblock %}
