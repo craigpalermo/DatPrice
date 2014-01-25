@@ -20,7 +20,11 @@ def det_mv(name):
 
     request_url += name
     
-    json_in = json.loads(urllib2.urlopen(request_url).read())
+    try:
+        json_in = json.loads(urllib2.urlopen(request_url).read())
+    except:
+        return -2
+
 
     items = json_in["results"]
 
@@ -39,6 +43,10 @@ def det_mv(name):
             continue
         else:
             total_items -=1
+    
+    if (total_items ==0):
+        return -1
+
 
     avg = avg/total_items
     
@@ -58,9 +66,19 @@ def determine_below_mqt_val(search_in, cat):
     results = search_json.get_search_results_json(search_in, cat)
     total_values = 0
     avg = 0
+
+    neg_run = 0
+
     for result in results:
         curr_mv = det_mv(result["title"]["value"])
-        print curr_mv
-        print result["title"]["value"]
+        if(curr_mv > float(result["sellingStatus"]["convertedCurrentPrice"]["value"])): 
+            continue
 
+        if (curr_mv < 0):
+            neg_run += 1
+            if (neg_run > 10):
+                break
+        else:
+            print "$"+str(curr_mv)+"--"+result["title"]["value"]
+        
 
