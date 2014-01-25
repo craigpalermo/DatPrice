@@ -52,4 +52,19 @@ $(document).ready(function () {
      
         chart.render();
     }
+
+    $("#keywords").focus()
+
+    var $element = $('#keywords');
+    function fadeInOut () {
+        $element.fadeIn(1000, function () {
+            $element.fadeOut(1500, function () {
+                $element.fadeIn(1500, function () {
+                    setTimeout(fadeInOut, 500);
+                });
+            });
+        });
+    }
+
+    fadeInOut();
 });
