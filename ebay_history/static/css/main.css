@@ -10,3 +10,11 @@
 #page-header {
     text-align: center;
 }
+
+#keywords {
+	outline: 0 !important;
+	border: none;
+	color: black;
+	font-size: 40px;
+	background-color: transparent;
+}

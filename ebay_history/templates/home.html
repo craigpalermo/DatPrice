@@ -6,10 +6,12 @@
     <div id="search-div" class="col-lg-12 col-centered">
         <form name='search' action='/' method='post'>
             {% csrf_token %}
-            <label for='keywords'>Keywords</label>
-            <input type='text' id='keywords' name='keywords'>
-
-            <label for='categoryId'>Category ID</label>
+            <div class="row">
+            <label for='keywords'></label>
+            <input type='text' id='keywords' name='keywords' placeholder='What are you looking for?'>
+            </div>
+            <div class="row">
+            <label for='categoryId'></label>
             <select name='categoryId' id='first-choice'>
                 <option value='20081'>Antiques</option>
                 <option value='550'>Art</option>
@@ -46,20 +48,22 @@
                 <option value='1249'>Video Games & Consoles</option>
                 <option value='99'>Everything Else</option>
             </select>
-
+            </div>
+            <div class="row">
             <select id = "second-choice">
                 <option>Select a Sub-Category</option>
             </select>
-            
-
+            </div>
+            <div class="row">
             <input type='submit'>
+            </div>
         </form>
 
     </div>
 
     <div class="row">
         <div class="col-lg-12">
-                <table id='average-table' style="visibility:hidden;">
+                <table id='average-table' style="display:none;">
                     {% for key, value in averages.items %}
                         <tr>
                             <td>{{ key }}</td>
@@ -69,7 +73,7 @@
                 </table>
             </div>
         </div>
-        
+        {% if show_graph %}
         <div class="row">
             <div class="col-lg-8 col-centered">
                 <div id="chartContainer">
@@ -78,5 +82,6 @@
                 </div>
             </div>
         </div>
+        {% endif %}
 </div>
 {% endblock %}
