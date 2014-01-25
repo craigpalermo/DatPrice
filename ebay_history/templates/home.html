@@ -11,20 +11,18 @@
                 <input type='text' id='keywords' name='keywords' placeholder='What are you looking for?'>
             </div>
 
-            <div class="row">
+            <div id="categoryMenus" class="row">
                 <label for='categoryId'></label>
                 <select name='categoryId' id='first-choice'>
                     {% include 'category-options.html' %}
                 </select>
-            </div>
 
-            <div class="row">
                 <select id = "second-choice">
                     <option>Select a Sub-Category</option>
                 </select>
             </div>
 
-            <div class="row">
+            <div id="submitButton" class="row">
                 <input type='submit'>
             </div>
         </form>

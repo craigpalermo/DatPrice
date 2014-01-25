@@ -14,7 +14,26 @@
 #keywords {
 	outline: 0 !important;
 	border: none;
-	color: black;
+	color: #004699;
 	font-size: 40px;
 	background-color: transparent;
+	font-family: 'Lato', sans-serif;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+/*#keywords[placeholder]{
+	text-align: center;
+}*/
+
+#categoryMenus {
+	background-color:  #004699;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+}
+
+#submitButton{
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
