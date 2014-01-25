@@ -22,4 +22,33 @@ $(document).ready(function () {
             });
         });
     });
+    window.onload = function () {
+    var table = document.getElementById("fake-table");
+    var tempData = []
+        for (var i = 0, row; row = table.rows[i]; i++){
+            for (var j = 0, col; col = row.cells[j]; j++){
+                temp = {}
+                temp['label']=table.rows[i].cells[j++].innerHTML;
+                temp['y']=parseInt(table.rows[i].cells[j].innerHTML);
+                tempData.push(temp);
+                console.log(temp);
+            }
+        }        
+    var chart = new CanvasJS.Chart("chartContainer", {
+
+      title:{
+        text: "Value Over Time"              
+      },
+      data: [//array of dataSeries              
+        { //dataSeries object
+
+         /*** Change type "column" to "bar", "area", "line" or "pie"***/
+         type: "column",
+         dataPoints: tempData
+        } 
+            ]
+     });
+ 
+    chart.render();
+  }
 });

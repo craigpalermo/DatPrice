@@ -50,9 +50,20 @@
             <select id = "second-choice">
                 <option>Select a Sub-Category</option>
             </select>
-        
-            <table id='fake-table'>
-            </table>
+            
+
+            <input type='submit'>
+        </form>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+                <table id='fake-table'>
+
+                </table>
+            </div>
+        </div>
 
             <script>
                 // Find a <table> element with id="myTable":
@@ -69,10 +80,15 @@
                     cell1.innerHTML = i;
                     cell2.innerHTML = i;
                 } 
-            </script>	
+            </script>  
 
-            <input type='submit'>
-        </form>
-    </div>
+                <div class="row">
+                <div class="col-lg-8 col-centered">
+                    <div id="chartContainer">
+                    <canvas style="height: 300px; width: 50%;">
+                    </canvas>
+                    </div>
+                </div>
+            </div>
 </div>
 {% endblock %}
