@@ -38,12 +38,16 @@ $(document).ready(function () {
         var chart = new CanvasJS.Chart("chartContainer", {
 
             title:{
-                text: "Value Over Time"              
+                text: "Average Resale Value",
+            },
+            axisX:{
+                title: "Time of Day",
+            },
+            axisY:{
+                title: "Price (Dollars)",
             },
             data: [//array of dataSeries              
                 { //dataSeries object
-
-                /*** Change type "column" to "bar", "area", "line" or "pie"***/
                 type: "column",
                 dataPoints: tempData
                 } 
@@ -55,6 +59,7 @@ $(document).ready(function () {
 
     $("#keywords").focus()
 
+    /*
     var $element = $('#keywords');
     function fadeInOut () {
         $element.fadeIn(1000, function () {
@@ -65,6 +70,6 @@ $(document).ready(function () {
             });
         });
     }
-
     fadeInOut();
+    */
 });

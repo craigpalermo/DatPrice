@@ -20,8 +20,11 @@
 	font-family: 'Lato', sans-serif;
 	padding-top: 10px;
 	padding-bottom: 10px;
+    width: 600px;
 }
-
+#keywords[type=text] {
+    cursor:none;
+}
 /*#keywords[placeholder]{
 	text-align: center;
 }*/
