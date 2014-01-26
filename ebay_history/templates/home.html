@@ -68,4 +68,17 @@
         </div>
         {% endif %} 
     </div>
+
+{% endblock %}
+
+{% block extrascripts %}
+    {% if post %}
+    <script>
+        $(document).ready(function(){
+            $('html, body').animate({
+            scrollTop: $("#chartContainer").offset().top
+            }, 2000);
+        });
+    </script>
+    {% endif %}
 {% endblock %}

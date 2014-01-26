@@ -59,19 +59,6 @@ $(document).ready(function () {
 
     $("#keywords").focus()
 
-    /*
-    var $element = $('#keywords');
-    function fadeInOut () {
-        $element.fadeIn(1000, function () {
-            $element.fadeOut(1500, function () {
-                $element.fadeIn(1500, function () {
-                    setTimeout(fadeInOut, 500);
-                });
-            });
-        });
-    }
-    fadeInOut();
-    */
 
     /* Submit buttons for search form */
     $("#similar-button").click(function() {
