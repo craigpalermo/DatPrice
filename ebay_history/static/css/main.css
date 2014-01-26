@@ -16,6 +16,26 @@
     margin-top: 100px;
 }
 
+.img-thumbnail {
+    height: 200px !important;
+}
+
+#placeholder {
+    height: 60px;
+}
+
+.item-tile {
+    height: 330px;
+}
+
+.tile-container {
+    width:90%;
+    text-align: center;
+}
+#tile-holder {
+    margin: 0 auto;
+}
+
 #page-header {
     text-align: left;
     vertical-align: top;

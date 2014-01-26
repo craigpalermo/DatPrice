@@ -82,9 +82,46 @@ $(document).ready(function () {
         $("#search-form").attr('action', '/');
         $("#search-form").submit();
     });
-    
+
+    /* set label colors */
+    $(".offset-label").each(function(){
+        var id = $(this).attr('id');
+        var num = $(this).html();
+        if (parseInt($(this).html(), 10) > 100) {
+            $(this).addClass("label label-danger");
+            $(this).html("Overpriced by " + (num - 100) + "%");
+        } else {
+            $(this).addClass("label label-success");
+            $(this).html("Underpriced by " + (100 - num) + "%");
+        } 
+        $(this).attr("title", num);
+    });
+
+    /* add custom sort by title attribute */
+    jQuery.fn.dataTableExt.oSort['title-numeric-asc']  = function(a,b) {
+        var x = a.match(/title="*(-?[0-9\.]+)/)[1];
+        var y = b.match(/title="*(-?[0-9\.]+)/)[1];
+        x = parseFloat( x );
+        y = parseFloat( y );
+        return ((x < y) ? -1 : ((x > y) ?  1 : 0));
+    };
+    jQuery.fn.dataTableExt.oSort['title-numeric-desc'] = function(a,b) {
+            var x = a.match(/title="*(-?[0-9\.]+)/)[1];
+                var y = b.match(/title="*(-?[0-9\.]+)/)[1];
+                    x = parseFloat( x );
+                        y = parseFloat( y );
+                            return ((x < y) ?  1 : ((x > y) ? -1 : 0));
+    };
+
     /* datatables */
     $("#similar_table").dataTable({
-        "aaSorting": [[ 3, "asc" ]]   
+        "aaSorting": [[ 3, "asc" ]],
+        "aoColumns": [
+                        null,
+                        null,
+                        null,
+                        { "sType": "title-numeric" },
+                    ]
     });
+
 });
