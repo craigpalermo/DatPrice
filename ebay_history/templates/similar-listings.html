@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <div class="row">
     <div class="col-md-12 pull-center">
         <table id='similar_table' class="table table-striped">
+            <div id="buffer">
             <thead>
                 <th></th>
                 <th>Title</th>
                 <th>Price</th>
                 <th>Discount</th>
             </thead>
+            </div>
             <tbody>
                 {% for item in items %}
                 <tr>

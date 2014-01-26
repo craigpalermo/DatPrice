@@ -3,12 +3,17 @@
     margin: 0 auto;
 }
 
-.pull-center {
-    text-align:center;
+.pull-left {
+    text-align:left;
+}
+
+.pull-center{
+	text-align: center;
 }
 
 #search-div {
     text-align: center;
+    margin-top: 100px;
 }
 
 .img-thumbnail {
@@ -16,15 +21,17 @@
 }
 
 #page-header {
-    text-align: center;
+    text-align: left;
+    vertical-align: top;
+    margin-left: 15px;
+    margin-top: 15px;
 }
 
 h1{
 	font-family: 'Lato', sans-serif;
-
-}
-.name {
-	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	padding-right: 8px;
 
 }
 
@@ -60,6 +67,10 @@ h1{
 	color: #333333;
 }
 
+#tagline{
+	color: #999999;
+}
+
 #submitButton{
 	padding-top: 20px
 }
@@ -82,4 +93,12 @@ select {
    	font-size: 18px;
    	background-color: white;
 	outline: none;
+}
+
+#col-md-12{
+	margin-top: 100px;
+}
+
+.buffer{
+	margin-top: 100px;
 }
