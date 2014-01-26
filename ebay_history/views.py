@@ -58,10 +58,19 @@ class SimilarView(View):
                         }
             values.append(item_data)
         print values 
+        values = sorted(values, key = lambda value: (value['offset']))
         data = {
             "items": values,
         }
         return render(request, self.template_name, data)
+
+class AverageView (View):
+
+    def post (self, request):
+        search_in = request.POST.get('keywords')
+        cat = request.POST.get('categoryId')
+        market_val.determine_below_mqt_val(search_in, cat)
+
 
 def calculate_averages(results):
     values = []
