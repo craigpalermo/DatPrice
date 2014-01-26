@@ -13,10 +13,10 @@
             <tbody>
                 {% for item in items %}
                 <tr>
-                    <td><img src="{{ item.galleryURL }}" class='img-thumbnail'></td>
+                    <td><img id="{{ forloop.counter }}-image" src="{{ item.galleryURL }}" class='img-thumbnail'></td>
                     <td><a href="{{ item.url }}">{{ item.title }}</a></td>
                     <td>${{ item.price }}</td>
-                    <td>{{ item.offset|floatformat:0 }}</td>
+                    <td><span class="offset-label" id="{{ forloop.counter }}">{{ item.offset|floatformat:0 }}</span></td>
                 </tr>
                 {% endfor %}
             </tbody>

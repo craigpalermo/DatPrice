@@ -11,6 +11,10 @@
     text-align: center;
 }
 
+.img-thumbnail {
+    height: 200px !important;
+}
+
 #page-header {
     text-align: center;
 }
