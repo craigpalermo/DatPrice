@@ -88,23 +88,22 @@ h1{
     margin-bottom:15px;
     width:90%;
     text-align:center;
-    font-size: 14;
+    font-size: 22;
 }
 .search_box {
 	outline: 0 !important;
 	border: none;
 	color: #002F66;
-	font-size: 40px;
 	background-color: transparent;
 	font-family: 'Lato', sans-serif;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	margin-bottom: 20px;
-    width: 600px;
     text-align: center;
 }
 #keywords[type=text] {
     cursor:none;
+}
+
+#selector-gap {
+    height:10px;
 }
 
 #average-price, #average-price h3 {
