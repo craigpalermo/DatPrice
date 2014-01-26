@@ -44,9 +44,9 @@ class HomeView(View):
 class SimilarView(View):
     template_name = 'similar-listings.html'
 
-    def post(self, request):
-        keywords = request.POST.get('keywords')
-        categoryId = request.POST.get('categoryId')
+    def get(self, request):
+        keywords = request.GET.get('keywords')
+        categoryId = request.GET.get('categoryId')
         json_string = get_similar_listings(keywords, categoryId)
         
         try:

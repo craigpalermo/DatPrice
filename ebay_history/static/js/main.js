@@ -96,12 +96,14 @@ $(document).ready(function () {
     $("#similar-button").click(function() {
         if (checkSubmitReady()) {
             $("#search-form").attr('action', '/similar/');
+            $("#search-form").attr('method', 'get');
             $("#search-form").submit();
         }
     });
     $("#appraise-button").click(function() {
         if (checkSubmitReady()) {
             $("#search-form").attr('action', '/');
+            $("#search-form").attr('method', 'post');
             $("#search-form").submit();
         }
     });
