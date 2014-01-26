@@ -6,19 +6,23 @@
 <link rel="stylesheet" href="{% static '/static/css/bootstrap-theme.min.css' %}">
 <link rel="stylesheet" href="{% static '/static/css/main.css' %}">
 <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{% static '/static/DataTables-1.9.4/media/css/jquery.dataTables.css' %}">
 </head>
 
 <body>
-<div class="container pull-center">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="container pull-left">
     <div class="row">
-        <div class="page-header">
-            <h1>Dat Price <small>eBay Price Prediction and Advisory</small></h1>
+        <div id="page-header">
+            <h1 id="name" style="display: inline;" >Dat Price</h1><small id="tagline">eBay Price Prediction and Advisory</small>
         </div>
     </div>
+</nav>
+    <div class="row">
+        {% block content %}
+        {% endblock %}
+	</div>
 </div>
-
-{% block content %}
-{% endblock %}
 
 <!-- script -->
 <script src="{% static '/static/js/jquery-1.10.2.min.js' %}"></script>
@@ -27,5 +31,7 @@
 <script src="{% static '/static/js/canvasjs.js' %}"></script>
 <script src="{% static '/static/js/canvasjs.min.js' %}"></script>
 <script src="{% static '/static/js/excanvas.js' %}"></script>
+<script src="{% static '/static/DataTables-1.9.4/media/js/jquery.dataTables.min.js' %}"></script>
+
 </body>
 </html>

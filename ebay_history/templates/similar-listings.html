@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-12 pull-center">
+        <table id='similar_table' class="table table-striped">
+            <div id="buffer">
+            <thead>
+                <th></th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Discount</th>
+            </thead>
+            </div>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td><img src="{{ item.galleryURL }}" class='img-thumbnail'></td>
+                    <td><a href="{{ item.url }}">{{ item.title }}</a></td>
+                    <td>${{ item.price }}</td>
+                    <td>{{ item.offset|floatformat:0 }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
