@@ -45,10 +45,12 @@ $(document).ready(function () {
             },
             axisY:{
                 title: "Price (Dollars)",
+                gridColor: "#C0C0C0",
             },
             data: [//array of dataSeries              
                 { //dataSeries object
                 type: "column",
+                color: "rgba(12,143,221,.5)",
                 dataPoints: tempData
                 } 
             ]
