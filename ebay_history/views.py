@@ -17,7 +17,9 @@ class HomeView(View):
         return render(request, self.template_name, data) 
 
     def post(self, request):
-        keywords = request.POST.get('keywords')
+        words1 = request.POST.get('keywords-1')
+        words2 = request.POST.get('keywords-2')
+        keywords = words1 if words2 == "" else words2
         categoryId = request.POST.get('categoryId')
         json_string = get_search_results_json(keywords, categoryId)
         #return HttpResponse(json_string)
@@ -45,7 +47,9 @@ class SimilarView(View):
     template_name = 'similar-listings.html'
 
     def get(self, request):
-        keywords = request.GET.get('keywords')
+        words1 = request.GET.get('keywords-1')
+        words2 = request.GET.get('keywords-2')
+        keywords = words1 if words2 == "" else words2
         categoryId = request.GET.get('categoryId')
         json_string = get_similar_listings(keywords, categoryId)
         
