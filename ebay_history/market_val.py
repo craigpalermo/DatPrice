@@ -79,7 +79,11 @@ def determine_below_mqt_val(search_in, cat):
             if (neg_run > 10):
                 break
         else:
-            ret.append({"MarketPrice": curr_mv, "ProductTitle" : result["title"]["value"], "ListPrice" : result["sellingStatus"]["convertedCurrentPrice"]["value"]})
+            ret.append({"MarketPrice": curr_mv,
+            "ProductTitle" : result["title"]["value"],
+            "ListPrice" : result["sellingStatus"]["convertedCurrentPrice"]["value"], 
+            "URL" : result["viewItemURL"]["value"]
+            })
 
 
     return {"Matches" : ret}
