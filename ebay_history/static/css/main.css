@@ -11,11 +11,16 @@
 	text-align: center;
 }
 
+#outer-chart-div {
+    margin-bottom:50px;
+}
+
 #search-div {
     text-align: center;
     margin-top: 70px;
     vertical-align: center;
 }
+
 
 .img-thumbnail {
     height: 200px !important;
@@ -73,6 +78,19 @@ h1{
 }
 
 #keywords {
+	font-size: 40px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+    width: 600px;
+}
+#keywords-sm {
+    margin-bottom:15px;
+    width:90%;
+    text-align:center;
+    font-size: 22;
+}
+.search_box {
 	outline: 0 !important;
 	border: none;
 	color: #002F66;

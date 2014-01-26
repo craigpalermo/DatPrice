@@ -7,16 +7,23 @@
         <form id='search-form' name='search' method='post'>
             {% csrf_token %}
             <div class="row">
-                <label for='keywords'></label>
-                <input type='text' id='keywords' name='keywords' placeholder='What are you looking for?'>
+                <div class="col-lg-12 hidden-xs">
+                    <input type='text' class='search_box' id='keywords' name='keywords' placeholder='What are you looking for?'>
+                </div>
+                <div class="col-lg-12 visible-xs pull-center">
+                    <input type='text' class='search_box kw-sm' name='keywords' id="keywords-sm" placeholder="What are you looking for?">
+                </div>
             </div>
 
             <div id="categoryMenus" class="row">
-                <label for='categoryId'></label>
                 <select name='categoryId' id='first-choice' class="dropdown">
                     <option>Select a Category</option>
                     {% include 'category-options.html' %}
                 </select>
+
+                <div class="col-xs-12 visible-xs">
+                    <br/>
+                </div>
 
                 <select id = "second-choice" class="dropdown">
                     <option>Select a Sub-Category</option>
@@ -24,8 +31,10 @@
             </div>
 
             <div id="submitButton" class="row">
-                <input class='btn btn-primary btn-lg' type='button' value='Appraise' id="appraise-button">
-                <input class='btn btn-primary btn-lg' type='button' value='Shop' id="similar-button">
+                <div class="col-sm-12">
+                    <input class='btn btn-primary btn-lg' type='button' value='Appraise' id="appraise-button">
+                    <input class='btn btn-primary btn-lg' type='button' value='Shop' id="similar-button">
+                </div>
             </div>
         </form>
     </div>
@@ -53,7 +62,7 @@
 </div>
 
 <div class="row">
-    <div class="col-lg-8 col-sm-12 col-centered">
+    <div id="outer-chart-div" class="col-lg-8 col-sm-12 col-centered">
         <div id="chartContainer">
             <canvas style="height: 300px; width: 50%;">
             </canvas>

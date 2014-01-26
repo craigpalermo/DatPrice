@@ -69,7 +69,7 @@ $(document).ready(function () {
         var $second = $("#second-choice");
         var ready = true;
 
-        if (!$keywords.val()) {
+        if (!$keywords.val() && !$('#keywords-sm').val()) {
             $keywords.attr("placeholder", "You must enter keywords!");
             $keywords.css("border", "2px dashed #d9534f");
             ready = false;
