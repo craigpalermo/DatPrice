@@ -29,45 +29,49 @@
             </div>
         </form>
     </div>
+</div>
 
-    <div class="row">
-        {% if averages %}
-        <div class="col-lg-12">
-                <table id='average-table' style="display:none;">
-                    {% for item in averages %}
-                        <tr>
-                            <td>{{ item.0 }}</td>
-                            <td>{{ item.1 }}</td>
-                        </tr>
-                    {% endfor %}
-                </table>
-            </div>
-        </div>
-        {% if show_graph %}
-        <div class="row">
-            <div class="col-lg-8 col-centered" id="average-price">
-                <h2>The average price for similar items is <strong>${{ average_price|floatformat:2 }}</strong>.</h2>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-lg-8 col-centered">
-                <div id="chartContainer">
-                    <canvas style="height: 300px; width: 50%;">
-                    </canvas>
-                </div>
-            </div>
-        </div>
-        {% endif %}
-        {% endif %}
-
-        {% if no_results %}
-        <div class="col-md-12 pull-center">
-            <h3>Your search did not return any results!</h3>
-            <h4>Try using more specific keywords.</h4>
-        </div>
-        {% endif %} 
+<div class="row">
+{% if averages %}
+    <div class="col-lg-12">
+        <table id='average-table' style="display:none;">
+            {% for item in averages %}
+            <tr>
+                <td>{{ item.0 }}</td>
+                <td>{{ item.1 }}</td>
+            </tr>
+            {% endfor %}
+        </table>
     </div>
+</div>
+
+{% if show_graph %}
+<div class="row">
+    <div class="col-lg-8 col-centered" id="average-price">
+        <h2>The average price for similar items is <strong>${{ average_price|floatformat:2 }}</strong>.</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8 col-centered">
+        <div id="chartContainer">
+            <canvas style="height: 300px; width: 50%;">
+            </canvas>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endif %}
+
+{% if no_results %}
+<div class="row">
+    <div class="col-md-12 pull-center">
+        <h3>Your search did not return any results!</h3>
+        <h4>Try using more specific keywords.</h4>
+    </div>
+</div>
+{% endif %} 
+</div>
 <span id="search_term">{{search_term}}</span>
 {% endblock %}
 
