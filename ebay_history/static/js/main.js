@@ -82,4 +82,9 @@ $(document).ready(function () {
         $("#search-form").attr('action', '/');
         $("#search-form").submit();
     });
+    
+    /* datatables */
+    $("#similar_table").dataTable({
+        "aaSorting": [[ 3, "asc" ]]   
+    });
 });
