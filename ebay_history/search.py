@@ -23,7 +23,7 @@ def get_similar_listings(keywords, categoryId):
     api = finding(appid=APPID)
     api.execute('findItemsAdvanced', {'keywords': keywords, 
                          'categoryId': categoryId, 
-                         'ListingType': 'FixedPrice',
+                         'listingType': 'FixedPrice',
                          'soldItemsOnly': 'false', 
                          'sortOrder': 'EndTimeSoonest'})
 
