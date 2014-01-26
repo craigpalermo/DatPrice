@@ -15,10 +15,19 @@
     text-align: center;
 }
 
+h1{
+	font-family: 'Lato', sans-serif;
+
+}
+.name {
+	font-family: 'Lato', sans-serif;
+
+}
+
 #keywords {
 	outline: 0 !important;
 	border: none;
-	color: #004699;
+	color: #002F66;
 	font-size: 40px;
 	background-color: transparent;
 	font-family: 'Lato', sans-serif;
@@ -37,13 +46,36 @@
 }
 
 #categoryMenus {
-	background-color:  #004699;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	background-color:  #458EE5;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
 
+#name{
+	font-weight: bold;
+	color: #333333;
 }
 
 #submitButton{
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 20px
+}
+
+#similar-button{
+	font-family: 'Lato', sans-serif; 
+	font-weight: bold;
+}
+
+#appraise-button{
+	margin-right: 10px;
+	font-family: 'Lato', sans-serif; 
+	font-weight: bold;
+
+}
+
+select {
+   	font-family: 'Lato', sans-serif; 
+   	border: 0;  
+   	font-size: 18px;
+   	background-color: white;
+	outline: none;
 }

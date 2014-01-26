@@ -13,11 +13,12 @@
 
             <div id="categoryMenus" class="row">
                 <label for='categoryId'></label>
-                <select name='categoryId' id='first-choice'>
+                <select name='categoryId' id='first-choice' class="dropdown">
+                    <option>Select a Category</option>
                     {% include 'category-options.html' %}
                 </select>
 
-                <select id = "second-choice">
+                <select id = "second-choice" class="dropdown">
                     <option>Select a Sub-Category</option>
                 </select>
             </div>
