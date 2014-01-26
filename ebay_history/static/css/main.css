@@ -7,8 +7,13 @@
     text-align:left;
 }
 
+.pull-center{
+	text-align: center;
+}
+
 #search-div {
     text-align: center;
+    margin-top: 100px;
 }
 
 #page-header {
@@ -25,7 +30,6 @@ h1{
 	padding-right: 8px;
 
 }
-
 
 #keywords {
 	outline: 0 !important;
@@ -85,4 +89,12 @@ select {
    	font-size: 18px;
    	background-color: white;
 	outline: none;
+}
+
+#col-md-12{
+	margin-top: 100px;
+}
+
+.buffer{
+	margin-top: 100px;
 }
