@@ -22,8 +22,11 @@ class HomeView(View):
         json_string = get_search_results_json(keywords, categoryId)
         #return HttpResponse(json_string)
         
-        results = json.loads(json_string)
-        
+        try:
+            results = json.loads(json_string)
+        except:
+            results = ""
+
         average_data = calculate_averages(results)
 
         data = {
@@ -41,8 +44,12 @@ class SimilarView(View):
         keywords = request.POST.get('keywords')
         categoryId = request.POST.get('categoryId')
         json_string = get_similar_listings(keywords, categoryId)
-        results = json.loads(json_string)
         
+        try:
+            results = json.loads(json_string)
+        except:
+            results = []
+
         average_data = calculate_averages(results)
 
         values = []
@@ -103,6 +110,10 @@ def calculate_averages(results):
     sum = 0
     for item in sorted_averages:
         sum += item[1]
-    average_price = sum / len(sorted_averages)
-    
+
+    if len(sorted_averages) > 0:
+        average_price = sum / len(sorted_averages)
+    else:
+        average_price = 0
+
     return {'averages':sorted_averages, 'average_price':average_price}

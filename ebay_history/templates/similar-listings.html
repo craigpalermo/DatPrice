@@ -2,8 +2,21 @@
 
 {% block content %}
 <div class="container">
+
+    {% if not items %}
+    <div class="row">
+        <div class="col-md-12" id="placeholder"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 pull-center">
+        <h3>Your search did not return any results!</h3>
+    <h4>Try using more specific keywords.</h4>
+</div>
+    </div>
+    {% endif %}
+
 <div class="row">
-    <div id="placeholder" class="col-md-12"></div>
+<div id="placeholder" class="col-md-12"></div>
 </div>
 <div class="row">
     {% for item in items %}
