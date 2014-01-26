@@ -7,10 +7,10 @@
         <form id='search-form' name='search' method='post'>
             {% csrf_token %}
             <div class="row">
-                <div class="col-lg-12 hidden-xs">
+                <div class="col-lg-12 hidden-sm">
                     <input type='text' class='search_box' id='keywords' name='keywords' placeholder='What are you looking for?'>
                 </div>
-                <div class="col-lg-12 visible-xs pull-center">
+                <div class="col-lg-12 visible-sm pull-center">
                     <input type='text' class='search_box kw-sm' name='keywords' id="keywords-sm" placeholder="What are you looking for?">
                 </div>
             </div>
@@ -21,7 +21,7 @@
                     {% include 'category-options.html' %}
                 </select>
 
-                <div class="col-xs-12 visible-xs">
+                <div class="col-sm-12 visible-sm">
                     <br/>
                 </div>
 
