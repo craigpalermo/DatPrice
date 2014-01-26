@@ -6,6 +6,10 @@ from search import get_search_results_json, get_similar_listings
 from datetime import datetime
 from time import mktime
 from operator import itemgetter
+import market_val
+
+
+
 
 import json, time
 
@@ -63,6 +67,14 @@ class SimilarView(View):
             "items": values,
         }
         return render(request, self.template_name, data)
+
+class AverageView (View):
+
+    def post (self, request):
+        search_in = request.POST.get('keywords')
+        cat = request.POST.get('categoryId')
+        market_val.determine_below_mqt_val(search_in, cat)
+
 
 def calculate_averages(results):
     values = []
