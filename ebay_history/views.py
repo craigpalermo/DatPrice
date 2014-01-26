@@ -59,13 +59,18 @@ class SimilarView(View):
         values = []
         for item in results:
             offset = 100 * (float(item['sellingStatus']['currentPrice']['value']) / float(average_data['average_price']))
-            
+           
+            try:
+                galleryURL = item.get('galleryURL').get('value')
+            except:
+                galleryURL = ""
+
             item_data = {
                         'title': item['title']['value'],
                         'price': item['sellingStatus']['currentPrice']['value'],
                         'offset': offset,      
                         'url': item['viewItemURL']['value'],
-                        'galleryURL': item['galleryURL']['value']
+                        'galleryURL': galleryURL
                         }
             values.append(item_data)
         print values 

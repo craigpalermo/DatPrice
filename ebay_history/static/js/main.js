@@ -63,14 +63,47 @@ $(document).ready(function () {
     $("#keywords").focus()
 
 
+    function checkSubmitReady(){
+        var $keywords = $("#keywords");
+        var $first = $("#first-choice");
+        var $second = $("#second-choice");
+        var ready = true;
+
+        if (!$keywords.val()) {
+            $keywords.attr("placeholder", "You must enter keywords!");
+            $keywords.css("border", "2px dashed #d9534f");
+            ready = false;
+        } else {
+            $keywords.css("border", "none");
+        }
+        if ($first.children("option").filter(":selected").text() === "Select a Category") { 
+            $first.css("border", "2px dashed #d9534f");
+            ready = false;
+        } else {
+            $first.css("border", "none");
+        }
+        if ($second.children("option").filter(":selected").text() === "Select a Sub-Category") { 
+            $second.css("border", "2px dashed #d9534f");
+            ready = false;
+        } else {
+            $second.css("border", "none");
+        }
+        
+        return ready;
+    }
+
     /* Submit buttons for search form */
     $("#similar-button").click(function() {
-        $("#search-form").attr('action', '/similar/');
-        $("#search-form").submit();
+        if (checkSubmitReady()) {
+            $("#search-form").attr('action', '/similar/');
+            $("#search-form").submit();
+        }
     });
     $("#appraise-button").click(function() {
-        $("#search-form").attr('action', '/');
-        $("#search-form").submit();
+        if (checkSubmitReady()) {
+            $("#search-form").attr('action', '/');
+            $("#search-form").submit();
+        }
     });
 
     /* set label colors */
