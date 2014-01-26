@@ -11,7 +11,12 @@ def get_search_results_json(keywords, categoryId):
                                        'Condition': '3000', \
                                        'soldItemsOnly': 'true', 
                                        'sortOrder': 'EndTimeSoonest'})
-    json_string = json.dumps(api.response_dict().get('searchResult').get('item'))
+    temp = api.response_dict()
+    if temp.get('searchResult') != None and temp.get('searchResult').get('item') != None:
+        json_string = json.dumps(temp.get('searchResult').get('item'))
+    else:
+        json_string = ""
+
     return json_string
 
 def get_similar_listings(keywords, categoryId):
@@ -21,5 +26,11 @@ def get_similar_listings(keywords, categoryId):
                          'ListingType': 'FixedPrice',
                          'soldItemsOnly': 'false', 
                          'sortOrder': 'EndTimeSoonest'})
-    json_string = json.dumps(api.response_dict().get('searchResult').get('item'))
+
+    temp = api.response_dict()
+    if temp.get('searchResult') != None and temp.get('searchResult').get('item') != None:    
+        json_string = json.dumps(temp.get('searchResult').get('item'))
+    else:
+        json_string = ""
+    
     return json_string
