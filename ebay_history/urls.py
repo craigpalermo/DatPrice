@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^similar/$', SimilarView.as_view(), name='similar'),
+    url(r'^search/$', views.AverageView, name='search')
 
     url(r'^admin/', include(admin.site.urls)),
 )
