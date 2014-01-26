@@ -27,7 +27,7 @@
 }
 
 #search_term {
-    display: none;
+    visibility:hidden;
 }
 
 #placeholder {
