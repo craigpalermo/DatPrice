@@ -25,7 +25,12 @@
 }
 
 .item-tile {
-    height: 330px;
+    height: 350px;
+    border: 1px solid #f7f7f7;
+    text-align: center;
+}
+.item-tile div {
+    margin-top: 4px;
 }
 
 .tile-container {

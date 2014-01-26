@@ -58,6 +58,7 @@ class SimilarView(View):
                         }
             values.append(item_data)
         print values 
+        values = sorted(values, key = lambda value: (value['offset']))
         data = {
             "items": values,
         }
