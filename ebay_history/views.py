@@ -6,6 +6,7 @@ from search import get_search_results_json, get_similar_listings
 from datetime import datetime
 from time import mktime
 from operator import itemgetter
+from ebaysdk import finding
 
 import json, time
 
@@ -76,10 +77,19 @@ class SimilarView(View):
 
 class AverageView (View):
 
+    def get (self, request):
+        search_in = request.POST.get('keywords')
+        cat = request.POST.get('categoryId')
+        results = market_val.determine_below_mqt_val(search_in, cat)
+
+        return HttpResponse(str(results))
+
     def post (self, request):
         search_in = request.POST.get('keywords')
         cat = request.POST.get('categoryId')
-        market_val.determine_below_mqt_val(search_in, cat)
+        results = market_val.determine_below_mqt_val(search_in, cat)
+
+        return HttpResponse(str(results))
 
 
 def calculate_averages(results):

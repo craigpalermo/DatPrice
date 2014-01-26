@@ -69,16 +69,19 @@ def determine_below_mqt_val(search_in, cat):
 
     neg_run = 0
 
+    ret = []
+
     for result in results:
         curr_mv = det_mv(result["title"]["value"])
-        if(curr_mv > float(result["sellingStatus"]["convertedCurrentPrice"]["value"])): 
-            continue
 
         if (curr_mv < 0):
             neg_run += 1
             if (neg_run > 10):
                 break
         else:
-            print "$"+str(curr_mv)+"--"+result["title"]["value"]
+            ret.append({"MarketPrice": curr_mv, "ProductTitle" : result["title"]["value"], "ListPrice" : result["sellingStatus"]["convertedCurrentPrice"]["value"]})
+
+
+    return {"Matches" : ret}
         
 
