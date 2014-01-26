@@ -8,10 +8,10 @@
             {% csrf_token %}
             <div class="row">
                 <div class="col-lg-12 hidden-xs">
-                    <input type='text' class='search_box' id='keywords' name='keywords-1' placeholder='What are you looking for?'>
+                    <input type='text' class='search_box' id='keywords' name='keywords-1' placeholder='What are you looking for?' {% if search_term %}value="{{ search_term }}"{% endif %}>
                 </div>
                 <div class="col-lg-12 visible-xs pull-center">
-                    <input type='text' class='search_box' name='keywords-2' id="keywords-sm" placeholder="What are you looking for?">
+                    <input type='text' class='search_box' name='keywords-2' id="keywords-sm" placeholder="What are you looking for?" {% if search_term %}value="{{ search_term }}"{% endif %}>
                 </div>
             </div>
 
@@ -85,13 +85,15 @@
 {% endblock %}
 
 {% block extrascripts %}
-    {% if post %}
     <script>
+    {% if post %}
         $(document).ready(function(){
             $('html, body').animate({
             scrollTop: $("#chartContainer").offset().top
             }, 2000);
         });
-    </script>
+    {% else %}
+        $("#keywords").focus()
     {% endif %}
+    </script>
 {% endblock %}

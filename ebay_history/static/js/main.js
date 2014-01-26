@@ -60,9 +60,6 @@ $(document).ready(function () {
         chart.render();
     }
 
-    $("#keywords").focus()
-
-
     function checkSubmitReady(){
         var $keywords = $("#keywords");
         var $first = $("#first-choice");
