@@ -13,7 +13,9 @@
 
 #search-div {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 70px;
+    padding-bottom: 40px;
+    vertical-align: center;
 }
 
 .img-thumbnail {
@@ -22,6 +24,7 @@
 
 #placeholder {
     height: 60px;
+
 }
 
 .item-tile {
@@ -50,6 +53,12 @@
     vertical-align: top;
     margin-left: 15px;
     margin-top: 12px;
+
+}
+
+#blue_stripe {
+	margin: 40px;
+    color: #002F66;	
 }
 
 h1{
@@ -69,6 +78,7 @@ h1{
 	font-family: 'Lato', sans-serif;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	margin-bottom: 20px;
     width: 600px;
     text-align: center;
 }
@@ -79,6 +89,13 @@ h1{
 #average-price, #average-price h3 {
     margin-top:0;
     text-align:center;
+    font-family: 'Lato', sans-serif;
+
+}
+
+h3{
+    font-family: 'Lato', sans-serif;
+
 }
 
 #categoryMenus {

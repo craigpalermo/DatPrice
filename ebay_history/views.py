@@ -36,7 +36,8 @@ class HomeView(View):
             "average_price": average_data['average_price'],
             "show_graph": True,
             "no_results": no_results,
-            "post": True
+            "post": True,
+            "search_term": keywords,
         }
         return render(request, self.template_name, data)
 

@@ -46,7 +46,7 @@
         {% if show_graph %}
         <div class="row">
             <div class="col-lg-8 col-centered" id="average-price">
-                <h3>The average price for similar items is <strong>${{ average_price|floatformat:2 }}</strong>.</h3>
+                <h2>The average price for similar items is <strong>${{ average_price|floatformat:2 }}</strong>.</h2>
             </div>
         </div>
         
@@ -68,7 +68,7 @@
         </div>
         {% endif %} 
     </div>
-
+<span id="search_term">{{search_term}}</span>
 {% endblock %}
 
 {% block extrascripts %}

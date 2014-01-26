@@ -38,7 +38,8 @@ $(document).ready(function () {
         var chart = new CanvasJS.Chart("chartContainer", {
 
             title:{
-                text: "Average Resale Value",
+                text: "Average Resale Value of \"" + $("#search_term").html() + "\"",
+                fontWeight: "lighter",
             },
             axisX:{
                 title: "Time of Day",
