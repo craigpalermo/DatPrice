@@ -40,7 +40,7 @@
     text-align: left;
     vertical-align: top;
     margin-left: 15px;
-    margin-top: 15px;
+    margin-top: 12px;
 }
 
 h1{
@@ -84,7 +84,7 @@ h1{
 }
 
 #tagline{
-	color: #999999;
+	color: #666666;
 }
 
 #submitButton{
@@ -117,4 +117,13 @@ select {
 
 .buffer{
 	margin-top: 100px;
+}
+
+#page-footer{
+	margin-left:15px;
+	margin-top:16px;
+	color: #222222;
+	font-family: 'Lato', sans-serif; 
+
+
 }
