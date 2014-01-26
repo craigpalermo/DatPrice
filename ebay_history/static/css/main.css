@@ -33,6 +33,10 @@
     margin-top: 4px;
 }
 
+#name a {
+    text-decoration:none;
+}
+
 .tile-container {
     width:90%;
     text-align: center;

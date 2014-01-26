@@ -6,10 +6,6 @@ from search import get_search_results_json, get_similar_listings
 from datetime import datetime
 from time import mktime
 from operator import itemgetter
-import market_val
-
-
-
 
 import json, time
 
