@@ -88,10 +88,10 @@ $(document).ready(function () {
         var id = $(this).attr('id');
         var num = $(this).html();
         if (parseInt($(this).html(), 10) > 100) {
-            $(this).css("background-color", "#d9534f");
+            $(this).addClass("label label-danger");
             $(this).html("Overpriced by " + (num - 100) + "%");
         } else {
-            $(this).css("background-color", "#5cb85c");
+            $(this).addClass("label label-success");
             $(this).html("Underpriced by " + (100 - num) + "%");
         } 
         $(this).attr("title", num);

@@ -1,29 +1,35 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<div class="container">
 <div class="row">
-    <div class="col-md-12 pull-center">
-        <table id='similar_table' class="table table-striped">
-            <div id="buffer">
-            <thead>
-                <th></th>
-                <th>Title</th>
-                <th>Price</th>
-                <th>Discount</th>
-            </thead>
+    <div id="placeholder" class="col-md-12"></div>
+</div>
+<div class="row">
+    {% for item in items %}
+        <div class="col-md-3 item-tile">
+            <div class="row">
+                <div class="col-md-12">
+                    <img id="{{ forloop.counter }}-image" src="{{ item.galleryURL }}" class='img-thumbnail'>   
+                </div>
             </div>
-            <tbody>
-                {% for item in items %}
-                <tr>
-                    <td><img id="{{ forloop.counter }}-image" src="{{ item.galleryURL }}" class='img-thumbnail'></td>
-                    <td><a href="{{ item.url }}">{{ item.title }}</a></td>
-                    <td>${{ item.price }}</td>
-                    <td><span class="offset-label" id="{{ forloop.counter }}">{{ item.offset|floatformat:0 }}</span></td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="{{ item.url }}">{{ item.title }}</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    ${{ item.price }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="offset-label" id="{{ forloop.counter }}">{{ item.offset|floatformat:0 }}</span>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
 </div>
 {% endblock %}
