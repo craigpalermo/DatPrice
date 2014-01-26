@@ -28,13 +28,14 @@ class HomeView(View):
             results = ""
 
         average_data = calculate_averages(results)
-        no_results = True if len(averages) <= 0 else False
+        no_results = True if len(average_data['averages']) <= 0 else False
 
         data = {
             "averages": average_data['averages'],
             "average_price": average_data['average_price'],
             "show_graph": True,
-            "no_results": no_results
+            "no_results": no_results,
+            "post": True
         }
         return render(request, self.template_name, data)
 
