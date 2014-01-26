@@ -47,13 +47,13 @@
 
 {% if show_graph %}
 <div class="row">
-    <div class="col-lg-8 col-centered" id="average-price">
+    <div class="col-lg-8 col-sm-12 col-centered" id="average-price">
         <h2>The average price for similar items is <strong>${{ average_price|floatformat:2 }}</strong>.</h2>
     </div>
 </div>
 
 <div class="row">
-    <div class="col-lg-8 col-centered">
+    <div class="col-lg-8 col-sm-12 col-centered">
         <div id="chartContainer">
             <canvas style="height: 300px; width: 50%;">
             </canvas>

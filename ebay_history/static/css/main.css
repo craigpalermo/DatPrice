@@ -14,12 +14,15 @@
 #search-div {
     text-align: center;
     margin-top: 70px;
-    padding-bottom: 40px;
     vertical-align: center;
 }
 
 .img-thumbnail {
     height: 200px !important;
+}
+
+#search_term {
+    display: none;
 }
 
 #placeholder {
